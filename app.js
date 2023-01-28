@@ -61,13 +61,10 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res){
 
   const itemName = req.body.newItem;
-
   const item = new Item({
     name: itemName
   });
-
   item.save();
-
   res.redirect("/");
 
   // if (req.body.list === "Work") {
@@ -77,6 +74,10 @@ app.post("/", function(req, res){
   //   items.push(item);
   //   res.redirect("/");
   // }
+});
+
+app.post("/delete", function(req, res){
+  console.log (req.body);
 });
 
 app.get("/work", function(req,res){
